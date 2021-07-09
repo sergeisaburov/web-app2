@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="ru">
 <head>
@@ -6,9 +7,22 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>    {% block title %}{% endblock %}</title>
+    <!-- # написать link и нажать TAB и вставить ссылку с https://www.bootstrapcdn.com/  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
 </head>
 <body>
-    {% block content %}
-    {% endblock %}
+    <aside><img src="{% static 'main/img/fofo_v_shlape.JPG' %}" alt="Лого">
+        <span class="logo">itproger</span>
+        <h3>Навигация</h3>
+        <ul>
+            <a href=""> <li><i class="fas fa-home"></i>Главная</li></a>
+            <a href=""> <li><i class="fas fa-utensils"></i>Про нас</li></a>
+            <a href=""> <li><i class="fas fa-phone"></i>Контакты</li></a>
+        </ul>
+    </aside>
+    <main>    {% block content %} {% endblock %}</main>
+
 </body>
 </html>
